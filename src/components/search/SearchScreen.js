@@ -6,6 +6,8 @@ import { getHeroByName } from "../../helpers/getHeroByName";
 import { useForm } from "../../hooks/useForm"
 import { HeroCard } from "../hero/HeroCard";
 import { useMemo } from "react";
+import '../../styles/components/search/SearchScreen.css'
+import '../../styles/components/hero/HeroList.css'
 
 export const SearchScreen = () => {
 
@@ -49,18 +51,15 @@ export const SearchScreen = () => {
      }
 
      return (
-          <div>
-               <div className="row">
-                    <div className="col-5">
-                         <h4 className="mt-3">Search</h4>
+               <div className="SearchScreen">
+                    <div className="search-container">
+                         <h1>Search</h1>
                          <hr />
-
-                         
                          <form onSubmit={ handleSearch }>
                               <input
                                    type="text"
                                    placeholder="Search a hero"
-                                   className="form-control"
+                                   className="search-input"
                                    name="searchText"
                                    autoComplete="off"
                                    onChange={handleInputChange}
@@ -69,7 +68,7 @@ export const SearchScreen = () => {
 
                               <button
                                    type="submit"
-                                   className="btn btn-outline-primary"
+                                   className="search-btn"
                               >
                                    Search...
                               </button>
@@ -77,28 +76,32 @@ export const SearchScreen = () => {
                          </form>
                     </div>
 
-                    <div className="col-7">
-                         <h4>Resultados</h4>
+                    <div className="search-results-container">
+                         <h4>Results</h4>
                          <hr />
 
                          {
                               (q === "") 
-                                   ? <div className="alert alert-info">Buscar un heroe</div>       
+                                   ? true      
                                    : ( heroesFiltered.length === 0) 
-                                   &&  <div className="alert alert-danger">No hay resultados : {q}</div>         
+                                   &&  <div className="no-found-search">No results for : {q}</div>         
                          }
 
+                         <div className="heroes">
+                              <div className="heroes-container">
+                                   {
+                                        heroesFiltered.map( hero => (
+                                             <HeroCard 
+                                                  key={ hero.id }
+                                                  { ...hero }
+                                             />
+                                        ) )
+                                   }
 
-                         {
-                              heroesFiltered.map( hero => (
-                                   <HeroCard 
-                                        key={ hero.id }
-                                        { ...hero }
-                                   />
-                              ) )
-                         }
+                              </div>
+
+                         </div>
                     </div>
                </div>
-          </div>
      )
 }

@@ -1,0 +1,118 @@
+.HeroScreen {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     min-height: 90vh;
+     background-color: #fafafa;
+     margin-top: 75px;
+  }
+  
+  .HeroScreen .hero-container {
+     background-color: white;
+     border-radius: 20px;
+     display: grid;
+     grid-template-columns: 1fr 1.4fr;
+     align-items: center;
+     max-width: 1050px;
+     max-height: 500px;
+  }
+  
+  .HeroScreen .hero-container .hero-img-container {
+     line-height: 2;
+  }
+  
+  .HeroScreen .hero-container img {
+     height: 500px;
+     object-fit: cover;
+     width: 100%;
+     border-top-left-radius: 20px;
+     border-bottom-left-radius: 20px;
+     position: relative;
+  }
+
+  .characters {
+     color: #000;
+  }
+  
+  @media screen and (max-width: 782px) {
+     .HeroScreen .hero-container .hero-img-container {
+        line-height: 7;
+     }
+  }
+  
+  @media screen and (max-width: 888px) {
+     .HeroScreen .hero-container .hero-img-container {
+        line-height: 4;
+     }
+  }
+  
+  
+  .HeroScreen .hero-info {
+     height: 100%;
+     padding: 56px 40px;
+  }
+  
+  .HeroScreen .hero-info h2 {
+     font-size: 30px;
+     letter-spacing: 2px;
+  }
+  
+  .HeroScreen .hero-info .plant__care-level {
+     font-size: 18px;
+     color: rgb(180, 178, 178);
+     margin-bottom: 18px;
+  }
+  
+  .HeroScreen .hero-info h3 {
+     font-size: 40px;
+  }
+  
+  .HeroScreen .plant__cares {
+     margin: 50px 0;
+     color: rgb(180, 178, 178);
+  }
+  
+  .btn-outline-info {
+     padding: 16px 55px;
+     background-color: #0d6efd;
+     border: none;
+     color: #fff;
+     border-radius: 6px;
+     font-size: 20px;
+     cursor: pointer;
+     margin-top: 25px;
+  }
+  .btn-outline-info:hover{
+     background-color: #2579f8;
+     color: #fff;
+  }
+  
+  @media screen and (max-width: 768px) {
+     .HeroScreen {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--background-grey);
+        padding: 20px;
+        height: min-content;
+     }
+  
+     .HeroScreen .hero-container {
+        max-height: none;
+        grid-template-rows: 1fr max-content;
+        grid-template-columns: none;
+        margin: 0;
+     }
+  
+     .HeroScreen .hero-container img {
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 0;
+     }
+  }
+  
+  @media screen and (max-width: 480px) {
+     .HeroScreen {
+        padding: 9px;
+        height: min-content;
+     }
+  }
