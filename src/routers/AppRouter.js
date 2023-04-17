@@ -1,8 +1,8 @@
 import { Routes, Route, BrowserRouter  } from "react-router-dom";
-import { LoginScreen } from "../components/login/LoginScreen";
+// import { LoginScreen } from "../components/login/LoginScreen";
 import { DashboardRoutes } from "./DashboardRoutes";
 import { PrivateRoute } from "./PrivateRoute";
-import { PublicRoute } from "./PublicRoute";
+// import { PublicRoute } from "./PublicRoute";
 
 
 export const AppRouter = () => {
@@ -14,12 +14,12 @@ export const AppRouter = () => {
                
                <Routes>
 
-                    <Route path="/login" element={
+                    {/* <Route path="/login" element={
                          <PublicRoute>
                               <LoginScreen />
                          </PublicRoute>
                          } 
-                    />
+                    /> */}
 
                     {/* el path es "/*" porque con eso le digo que si la ruta es cualquier otra despues del "/" muestre el DashboardRoutes,
                     y ahi es donde esta el navbar porque no quiero que me muestre el navbar en el login */}
