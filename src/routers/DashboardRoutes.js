@@ -13,7 +13,6 @@ export const DashboardRoutes = () => {
                <Navbar />
 
                <Routes>
-                    {/*si yo estoy en la url del path, muestra el componente que esta dentro del element */}
                     <Route path="marvel" element={<MarvelScreen />} />
                     <Route path="dc" element={<DcScreen />} />
 
